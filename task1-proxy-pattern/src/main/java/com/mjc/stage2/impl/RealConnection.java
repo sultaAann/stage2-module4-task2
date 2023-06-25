@@ -22,6 +22,9 @@ public class RealConnection implements Connection {
         login = null;
         password = null;
         isClosed = true;
+        ConnectionPool connectionPool = ConnectionPool.getInstance();
+        connectionPool.getConnection();
+        connectionPool.destroyPool();
     }
 
     @Override
